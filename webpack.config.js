@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = function (env, { analyze }) {
   const production = env.production || process.env.NODE_ENV === 'production';
@@ -23,7 +24,8 @@ module.exports = function (env, { analyze }) {
     devServer: {
       historyApiFallback: true,
       open: !process.env.CI,
-      port: 9000
+      port: 9000,
+      contentBase: path.join(__dirname, "dist")
     },
     performance: {
       hints: false
@@ -41,6 +43,11 @@ module.exports = function (env, { analyze }) {
     },
     plugins: [
       new HtmlWebpackPlugin({ template: 'index.html' }),
+      new CopyPlugin({
+        patterns: [
+          { from: 'src/locales', to: 'locales' }
+        ]
+      }),
       analyze && new BundleAnalyzerPlugin()
     ].filter(p => p)
   }

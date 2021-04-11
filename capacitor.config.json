@@ -1,0 +1,12 @@
+{
+  "appId": "com.capacitor.aurelia2",
+  "appName": "Aurelia2 Capacitor",
+  "bundledWebRuntime": true,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

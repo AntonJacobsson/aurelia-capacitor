@@ -1,4 +1,6 @@
-# aurelia2-capacitor-app
+# Aurelia Capacitor
+
+[![codebeat badge](https://codebeat.co/badges/287e17ec-344d-414f-baf5-d0a423289007)](https://codebeat.co/projects/github-com-antonjacobsson-aurelia-capacitor-main)
 
 This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
 

@@ -11,3 +11,5 @@ declare module '*.html' {
 }
 
 declare module '*.css';
+
+declare const PRODUCTION: boolean;

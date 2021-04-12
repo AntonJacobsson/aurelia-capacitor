@@ -10,7 +10,10 @@ Aurelia
         plugins: [Fetch],
         backend: {
           loadPath: '/locales/{{lng}}/{{ns}}.json',
-        }
+        },
+        lng: 'en',
+        fallbackLng: 'en',
+        debug: !PRODUCTION
       };
     })
   )

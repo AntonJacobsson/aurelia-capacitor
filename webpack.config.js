@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -47,6 +48,9 @@ module.exports = function (env, { analyze }) {
         patterns: [
           { from: 'src/locales', to: 'locales' }
         ]
+      }),
+      new webpack.DefinePlugin({
+        PRODUCTION: production,
       }),
       analyze && new BundleAnalyzerPlugin()
     ].filter(p => p)
